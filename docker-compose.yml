@@ -1,0 +1,11 @@
+version: '2.4'
+
+services:
+  cors_anywhere:
+    build:
+      context: .
+    tty: true
+    ports:
+      - '8081:8081'
+    healthcheck:
+      disable: true

@@ -1,0 +1,16 @@
+FROM node:16.20.2-buster
+
+ARG PORT=8081
+ARG CORSANYWHERE_WHITELIST=http://localhost:19006
+
+ENV PORT $PORT
+ENV CORSANYWHERE_WHITELIST $CORSANYWHERE_WHITELIST
+
+WORKDIR /opt/cors-anywhere
+
+COPY ./ .
+
+RUN npm i -g npm@9.6.5
+RUN npm i
+
+ENTRYPOINT ["node", "server.js"]
