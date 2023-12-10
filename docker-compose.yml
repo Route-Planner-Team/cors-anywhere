@@ -2,6 +2,7 @@ version: '2.4'
 
 services:
   cors_anywhere:
+    image: your-image-registry/planner-cors:latest
     build:
       context: .
     tty: true
